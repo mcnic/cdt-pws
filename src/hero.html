@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/index.css" />
-    <script type="text/javascript" src="/index.js"></script>
-    <!-- <script type="text/javascript" src="/hero.js"></script> -->
+    <script type="text/javascript" src="/hero.js"></script>
     <title>Hero info</title>
     <script type="module">
       window.onload = async function (e) {
         const main = document.querySelector("#main")
-        const hero = await getHero()
+        const params = new URLSearchParams(document.location.search)
+        const id = params.get("id")
+        const hero = await getHero(id)
         main.appendChild(hero)
       }
     </script>
