@@ -1,0 +1,7 @@
+# Install
+
+npm install
+
+# start test server
+
+node server.js
