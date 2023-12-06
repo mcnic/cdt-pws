@@ -1,0 +1,11 @@
+body {
+    font-size: large;
+}
+
+.list h1, .hero h1, .planet h1 {
+    color: black
+}
+
+a {
+    color: tomato;
+}
