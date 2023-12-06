@@ -1,18 +1,18 @@
 const apiUrl = 'https://www.swapi.tech/api/'
 
-const getPeople = async () => {
+const getAllHeroes = async () => {
   const resp = await fetch(apiUrl + 'people');
-  const people = await resp.json();
+  const list = await resp.json();
 
-  if (people.message !== "ok") {
+  if (list.message !== "ok") {
     const fragment = document.createElement("h1");
-    fragment.textContent = 'error ' + people.message;
+    fragment.textContent = 'error ' + list.message;
     return fragment
   }
 
   const ul = document.createElement("ul");
 
-  for (el of people.results) {
+  for (el of list.results) {
     const li = document.createElement("li");
     li.appendChild(Hero(el))
     ul.appendChild(li)

@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/index.css" />
-    <script type="text/javascript" src="/people.js"></script>
+    <script type="text/javascript" src="/heroesList.js"></script>
     <title>Heroes of Star Wars</title>
     <script type="module">
       window.onload = async function (e) {
         const main = document.querySelector("#main")
-        const people = await getPeople()
-        main.appendChild(people)
+        const heroes = await getAllHeroes()
+        main.appendChild(heroes)
       }
     </script>
   </head>
