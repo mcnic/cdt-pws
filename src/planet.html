@@ -8,9 +8,13 @@
     <title>Hero info</title>
     <script type="module">
       window.onload = async function (e) {
-        const main = document.querySelector("#main")
         const params = new URLSearchParams(document.location.search)
         const id = params.get("id")
+
+        const back = document.querySelector("#back")
+        back.setAttribute("href", "hero.html?id=" + id)
+
+        const main = document.querySelector("#main")
         const homeworld = await getPlanet(id)
         main.appendChild(homeworld)
       }
@@ -19,6 +23,7 @@
   <body>
     <main>
       <a href="/">All heroes</a>
+      <a id="back" href="/">back to hero</a>
       <div id="main"></div>
     </main>
   </body>
